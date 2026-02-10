@@ -44,7 +44,31 @@ public class Usuario {
 
         this.fechaFinSancion = null;
     }
+public void sancionar(int dias, LocalDate fechaRegistro) {
+    LocalDate fechaFinSancion = fechaRegistro.plusDays(dias);
+    this.sancionado = true;
+    this.fechaFinSancion = fechaFinSancion;
+}
+public void levantarSancion() {
+    this.sancionado = false;
+    this.fechaFinSancion = null;
+}
+public boolean estaSancionado() {
+    return this.sancionado;
+}
+public String toString() {
+    return "Usuario{" +
+            ", nombre= " + nombre + '\'' +
+            ", email= " + email + '\'' +
+            ", numeroSocio= " + numeroSocio + '\'' +
+            ", fechaRegistro= " + fechaRegistro +
+            ", sancionado= " + sancionado +
+            ", fechaFinSancion= " + fechaFinSancion +
+'}'
 
+
+
+}
 
 
 
