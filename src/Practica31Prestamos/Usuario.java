@@ -9,8 +9,43 @@ public class Usuario {
     private LocalDate fechaRegistro;
     private boolean sancionado;
     private LocalDate fechaFinSancion;
-    public Usuario (String nombre, String email, String numeroSocio, LocalDate fechaRegistro, boolean sancionado, LocalDate fechaFinSancion){
-        this.nombre=nombre;
-        if(email.matches(".@.+\\..+"))this email=email;
+    public Usuario (String nombre, String email, String numeroSocio, LocalDate fechaRegistro, boolean sancionado, LocalDate fechaFinSancion)throws UsuarioInvalidoException {
+        this.nombre = nombre;
+
+        if (email.matches(".@.+\\..+")) this.email = email;
+        else {
+            throw new UsuarioInvalidoException("Tienes que poner el '@' y el '.' para que pueda funcionar");
+        }
+
+        if (numeroSocio.matches("SOC[0-9]{5}")) this.numeroSocio = numeroSocio;
+        else if throw new UsuarioInvalidoException("Es necesario empezar con SOC seguído de 5 dígitos");
+
+        this.fechaRegistro = fechaRegistro;
+
+        this.sancionado = sancionado;
+
+        if (sancionado == true )this.fechaFinSancion = fechaFinSancion;
+        else if (sancionado == false)this.fechaFinSancion = null;
     }
+    public Usuario (String nombre, String email, String numeroSocios, LocalDate fechaRegistro)throws UsuarioInvalidoException{
+        this.nombre = nombre;
+
+        if (email.matches(".@.+\\..+")) this.email = email;
+        else {
+            throw new UsuarioInvalidoException("Tienes que poner el '@' y el '.' para que pueda funcionar");
+        }
+
+        if (numeroSocio.matches("SOC[0-9]{5}")) this.numeroSocio = numeroSocio;
+        else if throw new UsuarioInvalidoException("Es necesario empezar con SOC seguído de 5 dígitos");
+
+        this.fechaRegistro = fechaRegistro;
+
+        this.sancionado = false;
+
+        this.fechaFinSancion = null;
+    }
+
+
+
+
 }
