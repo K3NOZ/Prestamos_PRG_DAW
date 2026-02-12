@@ -18,7 +18,7 @@ public class Usuario {
         }
 
         if (numeroSocio.matches("SOC[0-9]{5}")) this.numeroSocio = numeroSocio;
-        else if throw new UsuarioInvalidoException("Es necesario empezar con SOC seguído de 5 dígitos");
+        else throw new UsuarioInvalidoException("Es necesario empezar con SOC seguído de 5 dígitos");
 
         this.fechaRegistro = fechaRegistro;
 
@@ -36,7 +36,7 @@ public class Usuario {
         }
 
         if (numeroSocio.matches("SOC[0-9]{5}")) this.numeroSocio = numeroSocio;
-        else if throw new UsuarioInvalidoException("Es necesario empezar con SOC seguído de 5 dígitos");
+        else throw new UsuarioInvalidoException("Es necesario empezar con SOC seguído de 5 dígitos");
 
         this.fechaRegistro = fechaRegistro;
 
