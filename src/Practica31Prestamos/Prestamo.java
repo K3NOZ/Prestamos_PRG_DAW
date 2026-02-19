@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class Prestamo {
-    private String codigoLibro;
+    String codigoLibro;
     private String tituloLibro;
     private Usuario socio;
     private LocalDate fechaPrestamo;
@@ -65,7 +65,7 @@ public class Prestamo {
         if (fechaDevolucionReal != null) {
             dias = ChronoUnit.DAYS.between(fechaDevolucionPrevista, fechaDevolucionReal);
         } else {
-            dias = ChronoUnit.DAYS.between((fechaPrestamo, LocalDate.now()));
+            dias = ChronoUnit.DAYS.between((fechaPrestamo , LocalDate.now());
         }
 
         if (dias < 0) {
