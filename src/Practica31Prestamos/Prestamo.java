@@ -9,7 +9,7 @@ public class Prestamo {
     private Usuario socio;
     private LocalDate fechaPrestamo;
     private LocalDate fechaDevolucionPrevista;
-    private LocalDate fechaDevolucionReal = null;
+    LocalDate fechaDevolucionReal = null;
 
     public Prestamo(String codigoLibro, String tituloLibro, Usuario socio, LocalDate fechaPrestamo, LocalDate fechaDevolucionPrevista, LocalDate fechaDevolucionReal)throws PrestamoInvalidoException{
         if (codigoLibro.matches("[A-Z]{3}" + "[0-9]{4}")) this.codigoLibro = codigoLibro;
@@ -90,7 +90,9 @@ public class Prestamo {
                 "\nFecha devolución prevista: " + this.fechaDevolucionPrevista +
                 "\nFecha devolución real: " + this.fechaDevolucionReal;
     }
-
+public String getfechaPrestamo() {
+    return this.fechaPrestamo;
+}
     }
 
 
