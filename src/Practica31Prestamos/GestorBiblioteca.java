@@ -66,8 +66,8 @@ public class GestorBiblioteca {
 
             if(p.codigoLibro.equals(codigoLibro) && p.fechaDevolucionReal == null) {
 
-                if (fechaDevolucion.isBefore((p.getfechaPrestamo()) {
-                    throw new PrestamoInvalidoException(("La fecha de devolución es anterior a la fecha de préstamos");
+                if (fechaDevolucion.isBefore((p.getfechaPrestamo()))){
+                    throw new PrestamoInvalidoException(("La fecha de devolución es anterior a la fecha de préstamos"));
                 }
                 p.fechaDevolucionReal = fechaDevolucion;
 
@@ -75,6 +75,39 @@ public class GestorBiblioteca {
             }
         }
         return false;
+    }
+    public Usuario buscarUsuario(String numeroSocio) {
+        for (int i = 0; i < numeroUsuarios; i++) {
+            if (usuarios[i] != null && usuarios[i].toString().contains(numeroSocio)) {
+                return usuarios[i];
+            }
+        }
+        return null;
+    }
+
+    public Prestamo[] getPrestamos() {
+        return prestamos;
+    }
+
+    public Usuario[] getUsuario() {
+        return usuarios;
+    }
+    @Override
+    public String toString() {
+        String resultado = "";
+
+        resultado = resultado + "Usuarios:\n";
+
+        for (int i = 0; i < numeroUsuarios; i++) {
+            resultado = resultado + usuarios[i].toString() + "\n";
+        }
+
+        resultado = resultado + "\nPrestamos:\n";
+
+        for (int i = 0; i < numeroPrestamos; i++) {
+            resultado = resultado + prestamos[i].toString() + "\n";
+        }
+        return resultado;
     }
 
 }

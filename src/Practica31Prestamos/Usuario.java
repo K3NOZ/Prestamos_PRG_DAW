@@ -65,12 +65,5 @@ public String toString() {
             ", sancionado= " + sancionado +
             ", fechaFinSancion= " + fechaFinSancion +
             "}";
-
-
-
-
-}
-
-
-
+    }
 }

@@ -1,6 +1,7 @@
 package Practica31Prestamos;
 
 import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class Prestamo {
@@ -65,7 +66,7 @@ public class Prestamo {
         if (fechaDevolucionReal != null) {
             dias = ChronoUnit.DAYS.between(fechaDevolucionPrevista, fechaDevolucionReal);
         } else {
-            dias = ChronoUnit.DAYS.between((fechaPrestamo , LocalDate.now());
+            dias = ChronoUnit.DAYS.between((fechaPrestamo) , LocalDate.now());
         }
 
         if (dias < 0) {
@@ -90,7 +91,7 @@ public class Prestamo {
                 "\nFecha devolución prevista: " + this.fechaDevolucionPrevista +
                 "\nFecha devolución real: " + this.fechaDevolucionReal;
     }
-public String getfechaPrestamo() {
+public ChronoLocalDate getfechaPrestamo() {
     return this.fechaPrestamo;
 }
     }
